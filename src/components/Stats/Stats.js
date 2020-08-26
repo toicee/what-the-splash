@@ -1,0 +1,19 @@
+import React from 'react';
+
+import './style.css';
+
+const Stats = ({ stats }) => {
+    if (!stats) {
+        return <span className="stats">Loading...</span>;
+    }
+
+    return (
+        <span className="stats">
+            {stats.error && 'error'}
+            {stats.isLoading && 'Loading...'}
+            {stats.downloads !== null && stats.downloads}
+        </span>
+    );
+};
+
+export default Stats;
